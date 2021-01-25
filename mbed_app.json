@@ -1,0 +1,5 @@
+{
+    "macros": [
+        "MBED_CONF_APP_MAIN_STACK_SIZE=20000"
+    ]
+}

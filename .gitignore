@@ -1,0 +1,15 @@
+.build
+.mbed
+projectfiles
+*.py*
+
+BUILD
+mbed-os/
+cmake_build
+.mbedbuild
+
+include
+libmicroros.a
+micro_ros_dev
+micro_ros_src
+mbed_toolchain.cmake
