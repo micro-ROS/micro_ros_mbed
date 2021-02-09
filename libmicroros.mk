@@ -52,7 +52,7 @@ $(EXTENSIONS_DIR)/micro_ros_src/src:
 	git clone -b foxy https://github.com/eProsima/micro-CDR src/micro-CDR; \
 	git clone -b feature/refactor_external_transports https://github.com/eProsima/Micro-XRCE-DDS-Client src/Micro-XRCE-DDS-Client; \
 	git clone -b master https://github.com/micro-ROS/rcl src/rcl; \
-	git clone -b master https://github.com/micro-ROS/rclc src/rclc; \
+	git clone -b master https://github.com/ros2/rclc src/rclc; \
 	git clone -b master https://github.com/micro-ROS/rcutils src/rcutils; \
 	git clone -b main https://github.com/micro-ROS/micro_ros_msgs src/micro_ros_msgs; \
 	git clone -b feature/refactor_external_transports https://github.com/micro-ROS/rmw-microxrcedds src/rmw-microxrcedds; \
