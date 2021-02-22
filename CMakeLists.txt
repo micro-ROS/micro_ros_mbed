@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.19.0 FATAL_ERROR)
 
 set(MBED_PATH ${CMAKE_CURRENT_SOURCE_DIR}/mbed-os CACHE INTERNAL "")
-set(MBED_CONFIG_PATH ${CMAKE_CURRENT_SOURCE_DIR}/.mbedbuild CACHE INTERNAL "")
+set(MBED_CONFIG_PATH ${CMAKE_CURRENT_BINARY_DIR} CACHE INTERNAL "")
 set(APP_TARGET mbed-microros)
 
 include(${MBED_PATH}/tools/cmake/app.cmake)
@@ -15,8 +15,6 @@ add_executable(${APP_TARGET})
 
 mbed_configure_app_target(${APP_TARGET})
 
-mbed_set_mbed_target_linker_script(${APP_TARGET})
-
 include(ExternalProject)
 
 externalproject_add(libmicroros_project
@@ -25,7 +23,7 @@ externalproject_add(libmicroros_project
     BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}
     CONFIGURE_COMMAND ""
     BUILD_COMMAND
-        make -j -f ../libmicroros.mk
+        make -j -f ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.mk
             CC=${CMAKE_C_COMPILER}
             AR=${CMAKE_AR}
             STRIP=${CMAKE_STRIP}

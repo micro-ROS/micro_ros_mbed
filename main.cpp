@@ -36,26 +36,20 @@ int main()
 {
     DigitalOut led(LED2);
 
-	rcl_allocator_t allocator = rcl_get_default_allocator();
-	rclc_support_t support;
-
-	rcl_init_options_t init_options = rcl_get_zero_initialized_init_options();
-
-	RCCHECK(rcl_init_options_init(&init_options, allocator));
-	rmw_init_options_t* rmw_options = rcl_init_options_get_rmw_init_options(&init_options);
-
-	RCCHECK(rmw_uros_options_set_custom_transport(
+	rmw_uros_set_custom_transport(
         true,
         NULL,
         mbed_serial_open,
         mbed_serial_close,
         mbed_serial_write,
-        mbed_serial_read,
-        rmw_options
-    ))
+        mbed_serial_read
+    );
+
+	rcl_allocator_t allocator = rcl_get_default_allocator();
+	rclc_support_t support;
 
 	// create init_options
-    RCCHECK(rclc_support_init_with_options(&support, 0, NULL, &init_options, &allocator));
+    RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
 
 	// create node
 	rcl_node_t node;
