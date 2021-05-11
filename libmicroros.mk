@@ -10,8 +10,8 @@ else
 	BUILD_TYPE = Release
 endif
 
-CFLAGS_INTERNAL := $(CFLAGS) -DCLOCK_MONOTONIC=0
-CXXFLAGS_INTERNAL := $(CXXFLAGS) -DCLOCK_MONOTONIC=0
+CFLAGS_INTERNAL := $(X_CFLAGS) -DCLOCK_MONOTONIC=0
+CXXFLAGS_INTERNAL := $(X_CXXFLAGS) -DCLOCK_MONOTONIC=0
 
 all: $(EXTENSIONS_DIR)/libmicroros.a
 
@@ -25,8 +25,8 @@ clean:
 $(EXTENSIONS_DIR)/mbed_toolchain.cmake: $(EXTENSIONS_DIR)/mbed_toolchain.cmake.in
 	rm -f $(EXTENSIONS_DIR)/mbed_toolchain.cmake; \
 	cat $(EXTENSIONS_DIR)/mbed_toolchain.cmake.in | \
-		sed "s/@CMAKE_C_COMPILER@/$(subst /,\/,$(CC))/g" | \
-		sed "s/@CMAKE_CXX_COMPILER@/$(subst /,\/,$(CXX))/g" | \
+		sed "s/@CMAKE_C_COMPILER@/$(subst /,\/,$(X_CC))/g" | \
+		sed "s/@CMAKE_CXX_COMPILER@/$(subst /,\/,$(X_CXX))/g" | \
 		sed "s/@CFLAGS@/$(subst /,\/,$(CFLAGS_INTERNAL))/g" | \
 		sed "s/@CXXFLAGS@/$(subst /,\/,$(CXXFLAGS_INTERNAL))/g" | \
 		sed "s/@IDF_TARGET@/$(subst /,\/,$(IDF_TARGET))/g" | \
@@ -43,7 +43,8 @@ $(EXTENSIONS_DIR)/micro_ros_dev/install:
 	git clone -b master https://github.com/ament/ament_package src/ament_package; \
 	git clone -b ros2 https://github.com/ament/googletest src/googletest; \
 	git clone -b master https://github.com/ros2/ament_cmake_ros src/ament_cmake_ros; \
-	colcon build; 
+	git clone -b master https://github.com/ament/ament_index src/ament_index; \
+	colcon build --cmake-args -DBUILD_TESTING=OFF; 
 
 $(EXTENSIONS_DIR)/micro_ros_src/src:
 	cd $(EXTENSIONS_DIR); \
@@ -97,12 +98,12 @@ $(EXTENSIONS_DIR)/libmicroros.a: $(EXTENSIONS_DIR)/micro_ros_src/install
 	mkdir -p $(UROS_DIR)/libmicroros; cd $(UROS_DIR)/libmicroros; \
 	for file in $$(find $(UROS_DIR)/install/lib/ -name '*.a'); do \
 		folder=$$(echo $$file | sed -E "s/(.+)\/(.+).a/\2/"); \
-		mkdir -p $$folder; cd $$folder; $(AR) x $$file; \
+		mkdir -p $$folder; cd $$folder; $(X_AR) x $$file; \
 		for f in *; do \
 			mv $$f ../$$folder-$$f; \
 		done; \
 		cd ..; rm -rf $$folder; \
 	done ; \
-	$(AR) rc -s libmicroros.a *.obj; cp libmicroros.a $(EXTENSIONS_DIR); \
+	$(X_AR) rc -s libmicroros.a *.obj; cp libmicroros.a $(EXTENSIONS_DIR); \
 	cd ..; rm -rf libmicroros; \
 	cp -R $(UROS_DIR)/install/include $(EXTENSIONS_DIR)/include;

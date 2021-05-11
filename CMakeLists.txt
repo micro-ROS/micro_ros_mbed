@@ -24,12 +24,12 @@ externalproject_add(libmicroros_project
     CONFIGURE_COMMAND ""
     BUILD_COMMAND
         make -j -f ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.mk
-            CC=${CMAKE_C_COMPILER}
-            AR=${CMAKE_AR}
-            STRIP=${CMAKE_STRIP}
-            CFLAGS=${CMAKE_C_FLAGS}
-            CXX=${CMAKE_CXX_COMPILER}
-            CXXFLAGS=${CMAKE_CXX_FLAGS}
+            X_CC=${CMAKE_C_COMPILER}
+            X_AR=${CMAKE_AR}
+            X_STRIP=${CMAKE_STRIP}
+            X_CFLAGS=${CMAKE_C_FLAGS}
+            X_CXX=${CMAKE_CXX_COMPILER}
+            X_CXXFLAGS=${CMAKE_CXX_FLAGS}
             BUILD_DIR=${CMAKE_BINARY_DIR}
             EXTENSIONS_DIR=${CMAKE_CURRENT_SOURCE_DIR}
     INSTALL_COMMAND ""
