@@ -4,6 +4,12 @@ on:
   pull_request:
     branches: 
       - '**'
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Manual trigger"
+  schedule:
+    - cron:  '0 4 * * *'
 
 jobs:
 
