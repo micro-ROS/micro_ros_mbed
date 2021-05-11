@@ -27,9 +27,9 @@ externalproject_add(libmicroros_project
             X_CC=${CMAKE_C_COMPILER}
             X_AR=${CMAKE_AR}
             X_STRIP=${CMAKE_STRIP}
-            CFLAGS=${CMAKE_C_FLAGS}
+            X_CFLAGS=${CMAKE_C_FLAGS}
             X_CXX=${CMAKE_CXX_COMPILER}
-            CXXFLAGS=${CMAKE_CXX_FLAGS}
+            X_CXXFLAGS=${CMAKE_CXX_FLAGS}
             BUILD_DIR=${CMAKE_BINARY_DIR}
             EXTENSIONS_DIR=${CMAKE_CURRENT_SOURCE_DIR}
     INSTALL_COMMAND ""
