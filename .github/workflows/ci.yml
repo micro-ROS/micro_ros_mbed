@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
-
+    strategy:
+      matrix:
+        mbed_version: [mbed-os-6.8.0, mbed-os-6.9.0, mbed-os-6.10.0]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v2
         with:
@@ -42,5 +45,6 @@ jobs:
         shell: bash
         run: |
           cd micro_ros_mbed
+          echo https://github.com/ARMmbed/mbed-os/\#${{ matrix.mbed_version }} > mbed-os.lib
           mbed-tools deploy
           mbed-tools compile -m DISCO_L475VG_IOT01A -t GCC_ARM
