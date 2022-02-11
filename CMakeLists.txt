@@ -47,7 +47,7 @@ target_sources(${APP_TARGET}
 add_dependencies(${APP_TARGET} libmicroros_project)
 target_include_directories(${APP_TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set(INCLUDE_ROS2_PACKAGES rmw;rcl;rcl_action;rcl_lifecycle;rcl_logging_interface)
+set(INCLUDE_ROS2_PACKAGES rmw;rcl;rcl_action;rcl_lifecycle;rcl_logging_interface;rosidl_runtime_c;rosidl_typesupport_interface;rosidl_typesupport_introspection_c)
 foreach(pkg ${INCLUDE_ROS2_PACKAGES})
     target_include_directories(${APP_TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/${pkg})
 endforeach()
