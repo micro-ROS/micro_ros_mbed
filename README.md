@@ -4,10 +4,23 @@ This code has been tested in [Mbed v6.8](https://os.mbed.com/docs/mbed-os/v6.8),
 
 ## Dependencies
 
-This component needs `colcon` and other Python 3 packages in order to build micro-ROS packages:
+If you do not have an ARM compiler you will need to install one:
 
 ```bash
-pip3 install catkin_pkg lark-parser empy colcon-common-extensions
+sudo apt install gcc-arm-none-eabi
+```
+
+This component needs `CMake` >= 3.19, `colcon` and other Python 3 packages in order to build micro-ROS packages:
+
+```bash
+sudo apt install python3-pip ninja-build
+pip3 install catkin_pkg lark-parser empy colcon-common-extensions mbed-tools
+```
+
+These are optional:
+
+```bash
+pip3 install prettytable future jinja2 intelhex
 ```
 
 ## Example
@@ -15,7 +28,6 @@ pip3 install catkin_pkg lark-parser empy colcon-common-extensions
 In order to test a int32_publisher example:
 
 ```bash
-pip3 install mbed-tools
 mbed-tools deploy
 mbed-tools compile -m DISCO_L475VG_IOT01A -t GCC_ARM -f
 ```
