@@ -74,8 +74,8 @@ $(EXTENSIONS_DIR)/micro_ros_src/src:
     touch src/rclc/rclc_examples/COLCON_IGNORE; \
 	touch src/rcl/rcl_yaml_param_parser/COLCON_IGNORE; \
 	touch src/rcl_logging/rcl_logging_log4cxx/COLCON_IGNORE; \
-    touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE;
-
+    touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
+	cp -rf $(EXTENSIONS_DIR)/extra_packages src/extra_packages || :;
 
 $(EXTENSIONS_DIR)/micro_ros_src/install: $(EXTENSIONS_DIR)/mbed_toolchain.cmake $(EXTENSIONS_DIR)/micro_ros_dev/install $(EXTENSIONS_DIR)/micro_ros_src/src
 	cd $(UROS_DIR); \
