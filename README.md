@@ -23,6 +23,10 @@ These are optional:
 pip3 install prettytable future jinja2 intelhex
 ```
 
+## Add packages
+Custom packages inside of the `extra_packages` folder will be included on the micro-ROS library build.
+This allows the use of custom messages or other ROS packages.
+
 ## Example
 
 In order to test a int32_publisher example:
