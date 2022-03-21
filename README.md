@@ -10,18 +10,7 @@ If you do not have an ARM compiler you will need to install one:
 sudo apt install gcc-arm-none-eabi
 ```
 
-This component needs `CMake` >= 3.19.
-If required, you can install the latest cmake version with the following commands:
-
-```bash
-apt update
-apt install -y git gcc-arm-none-eabi python3 python3-pip sudo git curl apt-transport-https ca-certificates gnupg software-properties-common wget ninja-build
-# Get latest CMake
-wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
-apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
-apt update
-apt install -y cmake
-```
+Make sure you have [all the mbed prerequisite software](https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-or-upgrade.html#prerequisite) installed on your computer.
 
 This component needs `colcon` and other Python 3 packages in order to build micro-ROS packages:
 
