@@ -29,6 +29,8 @@ pip3 install prettytable future jinja2 intelhex
 Custom packages inside of the `extra_packages` folder will be included on the micro-ROS library build.
 This allows the use of custom messages or other ROS packages.
 
+To rebuild the microros lib after including new packages, you can run `make -f libmicroros.mk clean` before `mbed-tools compile`
+
 ## Example
 
 In order to test a int32_publisher example:
@@ -37,6 +39,11 @@ In order to test a int32_publisher example:
 mbed-tools deploy
 mbed-tools compile -m DISCO_L475VG_IOT01A -t GCC_ARM -f
 ```
+
+| Board                       | -m                  |
+| ----------------------------| ------------------- |
+| Arduino Portenta H7 M7 Core | PORTENTA_H7_M7      |
+| Arduino Disco IOT           | DISCO_L475VG_IOT01A |
 
 Is possible to use a micro-ROS Agent just with this docker command:
 
