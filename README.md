@@ -10,7 +10,9 @@ If you do not have an ARM compiler you will need to install one:
 sudo apt install gcc-arm-none-eabi
 ```
 
-This component needs `CMake` >= 3.19, `colcon` and other Python 3 packages in order to build micro-ROS packages:
+Make sure you have [all the mbed prerequisite software](https://os.mbed.com/docs/mbed-os/v6.15/build-tools/install-or-upgrade.html#prerequisite) installed on your computer.
+
+This component needs `colcon` and other Python 3 packages in order to build micro-ROS packages:
 
 ```bash
 sudo apt install python3-pip ninja-build
