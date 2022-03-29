@@ -23,7 +23,7 @@ externalproject_add(libmicroros_project
     BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}
     CONFIGURE_COMMAND ""
     BUILD_COMMAND
-        make -j -f ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.mk
+        make -f ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.mk
             X_CC=${CMAKE_C_COMPILER}
             X_AR=${CMAKE_AR}
             X_STRIP=${CMAKE_STRIP}
@@ -47,7 +47,16 @@ target_sources(${APP_TARGET}
 add_dependencies(${APP_TARGET} libmicroros_project)
 target_include_directories(${APP_TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set(INCLUDE_ROS2_PACKAGES rmw;rcl;rcl_action;rcl_lifecycle;rcl_logging_interface;rosidl_runtime_c;rosidl_typesupport_interface;rosidl_typesupport_introspection_c)
+execute_process(
+    COMMAND
+        make -f ${CMAKE_CURRENT_SOURCE_DIR}/libmicroros.mk get_package_names
+    WORKING_DIRECTORY
+        ${CMAKE_CURRENT_SOURCE_DIR}
+    OUTPUT_VARIABLE
+        INCLUDE_ROS2_PACKAGES
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
 foreach(pkg ${INCLUDE_ROS2_PACKAGES})
     target_include_directories(${APP_TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/${pkg})
 endforeach()
