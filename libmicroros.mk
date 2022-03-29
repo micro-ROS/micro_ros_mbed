@@ -51,7 +51,7 @@ get_package_names: $(EXTENSIONS_DIR)/micro_ros_src/src
 	colcon list | awk '{print $$1}' | awk -v d=";" '{s=(NR==1?s:s d)$$0}END{print s}'
 
 $(EXTENSIONS_DIR)/micro_ros_src/src:
-	cd $(EXTENSIONS_DIR); \
+	@cd $(EXTENSIONS_DIR); \
 	rm -rf micro_ros_src; \
 	mkdir micro_ros_src; cd micro_ros_src; \
 	git clone -b foxy https://github.com/eProsima/micro-CDR src/micro-CDR; \
