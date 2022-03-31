@@ -1,3 +1,13 @@
+<br/>
+
+<a>
+   <p align="center">
+      <img width="40%" src=".images/mbed_logo.png">
+      <img width="40%" src=".images/microros_logo.png">
+   </p>
+</a>
+<br/>
+
 # micro-ROS example for Mbed RTOS [EXPERIMENTAL]
 
 This code has been tested in [Mbed v6.8](https://os.mbed.com/docs/mbed-os/v6.8), [Mbed v6.9](https://os.mbed.com/docs/mbed-os/v6.9) and [Mbed v6.10](https://os.mbed.com/docs/mbed-os/v6.10), with [ST B-L475E-IOT01A Discovery kit](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/).
