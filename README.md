@@ -52,7 +52,7 @@ Is possible to use a micro-ROS Agent just with this docker command:
 
 ```bash
 # Serial micro-ROS Agent
-docker run -it --rm --net=host microros/micro-ros-agent:rolling serial --dev [PORT] -v6
+docker run -it --rm --net=host microros/micro-ros-agent:humble serial --dev [PORT] -v6
 ```
 
 ## Purpose of the Project
