@@ -2,8 +2,8 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.0 (2022-05-25)
+------------------
 * Update banner (`#28 <https://github.com/micro-ROS/micro_ros_mbed/issues/28>`_)
 * Add logos (`#26 <https://github.com/micro-ROS/micro_ros_mbed/issues/26>`_)
 * Fix Rolling includes (`#25 <https://github.com/micro-ROS/micro_ros_mbed/issues/25>`_)
