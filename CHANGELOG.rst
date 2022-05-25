@@ -2,8 +2,8 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2022-05-25)
+------------------
 * Initial Humble release (`#31 <https://github.com/micro-ROS/micro_ros_mbed/issues/31>`_)
 * Update banner (`#28 <https://github.com/micro-ROS/micro_ros_mbed/issues/28>`_)
 * Add logos (`#26 <https://github.com/micro-ROS/micro_ros_mbed/issues/26>`_)
