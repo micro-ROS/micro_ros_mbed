@@ -17,6 +17,9 @@ mbed_configure_app_target(${APP_TARGET})
 
 include(ExternalProject)
 
+# Workarround for https://github.com/ros2/rosidl_dynamic_typesupport/pull/3
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DINCLUDED_UCHAR" CACHE STRING "" FORCE)
+
 externalproject_add(libmicroros_project
     PREFIX     ${CMAKE_BINARY_DIR}/libmicroros-prefix
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}

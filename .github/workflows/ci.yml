@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: 
+    branches:
       - '**'
   workflow_dispatch:
     inputs:
@@ -16,7 +16,7 @@ jobs:
   micro_ros_mbed:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: ubuntu:22.04
     strategy:
       matrix:
         mbed_version: [mbed-os-6.8.0, mbed-os-6.9.0, mbed-os-6.10.0]
@@ -31,12 +31,7 @@ jobs:
         run: |
           apt update
           export DEBIAN_FRONTEND=noninteractive
-          apt install -y git gcc-arm-none-eabi python3 python3-pip sudo git curl apt-transport-https ca-certificates gnupg software-properties-common wget ninja-build
-          # Latest CMake
-          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
-          apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
-          apt update
-          apt install -y cmake
+          apt install -y git gcc-arm-none-eabi python3 python3-pip sudo git curl apt-transport-https ca-certificates gnupg software-properties-common wget ninja-build cmake
           # Install colcon
           pip3 install catkin_pkg lark-parser empy colcon-common-extensions
           pip3 install mbed-tools
