@@ -2,8 +2,8 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+5.0.0 (2023-06-12)
+------------------
 * Update rolling repos (`#39 <https://github.com/micro-ROS/micro_ros_mbed/issues/39>`_)
 * Replace repo with micro-ROS fork (`#37 <https://github.com/micro-ROS/micro_ros_mbed/issues/37>`_)
 * Update rolling build sources (`#36 <https://github.com/micro-ROS/micro_ros_mbed/issues/36>`_)
