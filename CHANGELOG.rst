@@ -2,6 +2,14 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update rolling repos (`#39 <https://github.com/micro-ROS/micro_ros_mbed/issues/39>`_)
+* Replace repo with micro-ROS fork (`#37 <https://github.com/micro-ROS/micro_ros_mbed/issues/37>`_)
+* Update rolling build sources (`#36 <https://github.com/micro-ROS/micro_ros_mbed/issues/36>`_)
+* Update rolling repositories (`#35 <https://github.com/micro-ROS/micro_ros_mbed/issues/35>`_)
+* Add rosidl_core (`#32 <https://github.com/micro-ROS/micro_ros_mbed/issues/32>`_)
+
 4.0.0 (2022-05-25)
 ------------------
 * Update banner (`#28 <https://github.com/micro-ROS/micro_ros_mbed/issues/28>`_)
