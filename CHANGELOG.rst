@@ -2,6 +2,14 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Bump jazzy (`#45 <https://github.com/micro-ROS/micro_ros_mbed/issues/45>`_)
+* Ignore lttngpy (`#44 <https://github.com/micro-ROS/micro_ros_mbed/issues/44>`_)
+* Remove micro-ROS fork (`#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_)
+* Update rclc to rolling (`#40 <https://github.com/micro-ROS/micro_ros_mbed/issues/40>`_)
+* Contributors: Antonio Cuadros, Pablo Garrido
+
 5.0.0 (2023-06-12)
 ------------------
 * Update rolling repos (`#39 <https://github.com/micro-ROS/micro_ros_mbed/issues/39>`_)
