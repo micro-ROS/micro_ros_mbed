@@ -2,8 +2,8 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+5.0.1 (2024-05-31)
+------------------
 * Bump jazzy (`#45 <https://github.com/micro-ROS/micro_ros_mbed/issues/45>`_)
 * Ignore lttngpy (`#44 <https://github.com/micro-ROS/micro_ros_mbed/issues/44>`_)
 * Remove micro-ROS fork (`#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_)
