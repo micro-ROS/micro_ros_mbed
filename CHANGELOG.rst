@@ -2,6 +2,19 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove micro-ROS fork (backport `#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_) (`#43 <https://github.com/micro-ROS/micro_ros_mbed/issues/43>`_)
+  * Remove micro-ROS fork (`#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_)
+  (cherry picked from commit 85353d9699954cd2b2d796eae05972afbe6df153)
+  # Conflicts:
+  #	libmicroros.mk
+  * Fix conflicts
+  ---------
+  Co-authored-by: Antonio Cuadros <49162117+Acuadros95@users.noreply.github.com>
+  Co-authored-by: acuadros95 <acuadros1995@gmail.com>
+* Contributors: mergify[bot]
+
 4.1.0 (2023-06-12)
 ------------------
 * Update repositories (`#38 <https://github.com/micro-ROS/micro_ros_mbed/issues/38>`_)
