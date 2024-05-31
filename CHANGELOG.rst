@@ -2,8 +2,8 @@
 Changelog for package micro_ros_mbed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.1 (2024-05-31)
+------------------
 * Remove micro-ROS fork (backport `#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_) (`#43 <https://github.com/micro-ROS/micro_ros_mbed/issues/43>`_)
   * Remove micro-ROS fork (`#42 <https://github.com/micro-ROS/micro_ros_mbed/issues/42>`_)
   (cherry picked from commit 85353d9699954cd2b2d796eae05972afbe6df153)
